@@ -3,6 +3,8 @@ package com.security.enity;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -11,6 +13,8 @@ import jakarta.persistence.OneToOne;
 public class Passport {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer passportId;
 	private String passpotNum;
 	private String center;
 	private LocalDate startDate;
@@ -19,6 +23,14 @@ public class Passport {
 	@OneToOne
 	@JoinColumn(name="person-id")
 	private Person person;
+
+	public Integer getPassportId() {
+		return passportId;
+	}
+
+	public void setPassportId(Integer passportId) {
+		this.passportId = passportId;
+	}
 
 	public String getPasspotNum() {
 		return passpotNum;

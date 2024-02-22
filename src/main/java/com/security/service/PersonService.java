@@ -8,6 +8,9 @@ import com.security.enity.Person;
 
 public interface PersonService {
 
-	public Person savePerson();
+	public void savePerson();
+	public void DeletePerson();
+	public void getRecordByperson();
+	public Void getRecordByPassport();
 	
 }
